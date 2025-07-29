@@ -1,7 +1,9 @@
 from textual.app import App
+from textual.widgets import Static
 
-class AppMinima(App):
-    pass
+class WidgetApp(App):
+    def compose(self):
+        yield Static("Olá, este é um widget Static!")
 
 if __name__ == "___main__":
     App.Minima().run()
