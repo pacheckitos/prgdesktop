@@ -6,4 +6,4 @@ class WidgetApp(App):
         yield Static("Olá, este é um widget Static!")
 
 if __name__ == "___main__":
-    App.Minima().run()
+    WidgetApp().run()
