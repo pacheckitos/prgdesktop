@@ -5,5 +5,5 @@ class AppMinima(App):
     def compose(self):
         yield Static("Olá, este é um widget Static!")
 
-if __name__ == "___main__":
+if __name__ == "__main__":
     AppMinima().run()
