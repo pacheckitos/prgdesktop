@@ -11,14 +11,14 @@ class MVCApp(App):
         self.contador = Contador()
 
     def compose(self):
-        yield Button(f"Número de cliques: {self.contador.valor}", id = "btn_cnt")
-        yield Static("Clique para incrementar", id = "lbl_valor")
+        yield Button("Clique para incrementar", id = "btn_cnt")
+        yield Static(f"Número de cliques: {self.contador.valor}", id = "lbl_valor")
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         if event.button.id == "btn_cnt":
             self.contador.valor += 1
-            label = self.query_one("#btn_cnt", Button)
-            label.label = f"Número de cliques: {self.contador.valor}"
+            label = self.query_one("#lbl_valor", Static)
+            label.update(f"Número de cliques: {self.contador.valor}")
 
 if __name__ == "__main__":
     app = MVCApp()
